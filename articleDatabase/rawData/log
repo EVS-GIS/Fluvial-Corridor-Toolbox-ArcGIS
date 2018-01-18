@@ -1,0 +1,3 @@
+20140123 923   0     0     0Clement D:\Emplois\CNRS\FluvialCorridor\exampleDatabase\rawData\mopo_Drome = SELECTMASK(D:\Emplois\CNRS\FluvialCorridor\exampleDatabase\rawData\mntbdtopo, C:\Users\Clement\AppData\Local\Temp\arcDAC6\t_t202)
+201710231457   0     0     0aantonio C:\Users\aantonio\Desktop\FluvialCorridor\articleDatabase\rawData\BurnedDEM = CON(C:\Users\aantonio\Desktop\FluvialCorridor\articleDatabase\rawData\FLOATUserDEM <> 0, C:\Users\aantonio\AppData\Local\Temp\AH20171023145715\bufferelevgeo)
+201710231511   0     1     0aantonio C:\Users\aantonio\Desktop\FluvialCorridor\articleDatabase\rawData\BurnedDEM = CON(C:\Users\aantonio\Desktop\FluvialCorridor\articleDatabase\rawData\FLOATUserDEM <> 0, C:\Users\aantonio\AppData\Local\Temp\AH20171023151136\bufferelevgeo)
