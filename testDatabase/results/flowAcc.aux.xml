@@ -3,6 +3,6 @@
     <MDI key="PyramidResamplingType">NEAREST</MDI>
   </Metadata>
   <PAMRasterBand band="1">
-    <NoDataValue le_hex_equiv="000000A0FFFFEFC7">-3.40282306073710E+038</NoDataValue>
+    <NoDataValue le_hex_equiv="000000A0FFFFEFC7">-3.40282306073710E+38</NoDataValue>
   </PAMRasterBand>
 </PAMDataset>

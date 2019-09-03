@@ -59,7 +59,7 @@ fieldnamesOutFC = [f.name for f in arcpy.ListFields(InputFCMTS)]
 for fieldOut in fieldnamesOutFC :
     if  str(fieldOut) not in str(fieldnamesInFC) :
             arcpy.DeleteField_management(InputFCMTS, str(fieldOut))
-            
+ 
 arcpy.AddField_management(InputFCMTS, "Rank_UGO", "SHORT", "", "", "", "","NULLABLE", "NON_REQUIRED")
 arcpy.AddField_management(InputFCMTS, "NextDownID", "SHORT", "", "", "", "","NULLABLE", "NON_REQUIRED")
 arcpy.AddField_management(InputFCMTS, "NextUpID", "SHORT", "", "", "", "","NULLABLE", "NON_REQUIRED")
