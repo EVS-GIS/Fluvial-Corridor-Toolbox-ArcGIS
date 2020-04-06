@@ -30,7 +30,8 @@ from arcpy.sa import *
 import os
 import def__UpToDateShapeLengthField as UPD_SL 
 
-# 
+# AA
+import archydro 
 arcpy.CheckOutExtension('Spatial')
 
 # Allow the temporary outputs overwrite
@@ -85,8 +86,16 @@ if str(StepDEM) == "Original DEM" :
         CopyNetworkForBurning = arcpy.CopyFeatures_management(NetworkForNurning, "%ScratchWorkspace%\\CopyNetworkForBurning")
         FLOATUserDEM = Float(UserDEM)
         FLOATUserDEM.save(str(path) + "\\FLOATUserDEM")
-        DEM = arcpy.gp.DEMReconditioning_archydro(FLOATUserDEM, CopyNetworkForBurning, NumberOfCellsForStreamBuffer, SmoothDropInZUnits, SharpDropinZUnits, out, "NEGATIVE_NO")
-
+        #DEM = arcpy.gp.DEMReconditioning_archydro(FLOATUserDEM, CopyNetworkForBurning, NumberOfCellsForStreamBuffer, SmoothDropInZUnits, SharpDropinZUnits, out, "NEGATIVE_NO")
+ 
+        #AA
+        oProcessor = archydro.demreconditioning.DEMReconditioning()
+        oProcessor.bCallFromPYT = False
+        params = (FLOATUserDEM, CopyNetworkForBurning, NumberOfCellsForStreamBuffer, SmoothDropInZUnits, SharpDropinZUnits, out, "NEGATIVE_NO")
+        str_defres = oProcessor.execute(params, None)
+        DEM = arcpy.Copy_management(out, "%ScratchWorkspace%\\BurnedDEM")
+        
+                 
         ncurrentstep+=1
     elif str(IncludeStreamBurning) == "false" :
         DEM = UserDEM

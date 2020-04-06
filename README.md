@@ -1,8 +1,8 @@
 # Fluvial-Corridor-Toolbox for ArcGIS
 
 Fluvial Corridor Toolbox compability was tested on :
-* ArcGIS for Desktop environment (ArcMap) from version 10.0 to 10.6
-* ArcGIS Pro from version 2.0.1 to 2.1.1
+* ArcGIS for Desktop environment (ArcMap) from version 10.0 to 10.7
+* ArcGIS Pro from version 2.0.1 to 2.5.1
 
 Please begin to read "User_Guide_GeneralOverview.pdf" 
 
