@@ -6,7 +6,7 @@ Last update on 07 fev. 2014
 
 @author: Clement Roux
 
-@contact: aurelie.antonio@ens-lyon.fr
+@contact: samuel.dunesme@ens-lyon.fr
           CNRS - UMR5600 Environnement Ville Societe
           15 Parvis René Descartes, BP 7000, 69342 Lyon Cedex 07, France
          

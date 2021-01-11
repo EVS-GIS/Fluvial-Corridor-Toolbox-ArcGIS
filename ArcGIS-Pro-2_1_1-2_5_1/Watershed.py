@@ -6,9 +6,9 @@
 
 #@author: Clement Roux
 
-#@contact: aurelie.antonio@ens-lyon.fr
+#@contact: samuel.dunesme@ens-lyon.fr
 #          CNRS - UMR5600 Environnement Ville Societe
-#          15 Parvis René Descartes, BP 7000, 69342 Lyon Cedex 07, France
+#          15 Parvis Renï¿½ Descartes, BP 7000, 69342 Lyon Cedex 07, France
          
 #@note: For each use of the FluvialCorridor toolbox leading to a publication, report, presentation or any other
 #       document, please refer the following article :
@@ -17,7 +17,7 @@
        
 #@summary: Watershed is an open-source python and arcPy code.
 #          This script provides a characterization of linear or polygon  UGO, DGO or AGO-scale database. For each
-#          component of the database, a set of points with the drained surface (m²) is extracted from a flow 
+#          component of the database, a set of points with the drained surface (mï¿½) is extracted from a flow 
 #          accumulation raster. It can be then join to the original database thanks to a "Join_Field" field.
           
 #'''

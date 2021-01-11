@@ -5,9 +5,9 @@
 
 #@author: Clement Roux
 
-#@contact: aurelie.antonio@ens-lyon.fr
+#@contact: samuel.dunesme@ens-lyon.fr
 #          CNRS - UMR5600 Environnement Ville Societe
-#          15 Parvis René Descartes, BP 7000, 69342 Lyon Cedex 07, France
+#          15 Parvis Renï¿½ Descartes, BP 7000, 69342 Lyon Cedex 07, France
         
 #@note: For each use of the FluvialCorridor toolbox leading to a publication, report, presentation or any other
 #       document, please refer the following article :

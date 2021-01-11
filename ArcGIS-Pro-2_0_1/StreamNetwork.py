@@ -6,9 +6,9 @@
 
 #@author: Clement Roux
 
-#@contact: aurelie.antonio@ens-lyon.fr
+#@contact: samuel.dunesme@ens-lyon.fr
 #          CNRS - UMR5600 Environnement Ville Societe
-#          15 Parvis René Descartes, BP 7000, 69342 Lyon Cedex 07, France
+#          15 Parvis Renï¿½ Descartes, BP 7000, 69342 Lyon Cedex 07, France
          
 #@note: For each use of the FluvialCorridor toolbox leading to a publication, report, presentation or any other
 #       document, please refer the following article :
@@ -141,7 +141,7 @@ CellA = float(str(CellS))*float(str(CellS))/1000000
 nbCell = float(str(ThresholdDrainage))/CellA
 Expression = "\"Value\" >= " + str(int(nbCell))
 ncurrentstep+=1
-arcpy.AddMessage("Thresholding : keep cells with a drainage area >= " + str(ThresholdDrainage) + "km² - Step " + str(ncurrentstep) + "/" + str(nstep))
+arcpy.AddMessage("Thresholding : keep cells with a drainage area >= " + str(ThresholdDrainage) + "kmï¿½ - Step " + str(ncurrentstep) + "/" + str(nstep))
 ThresholdStep = arcpy.gp.Con_sa(FlowAcc, FlowAcc, "%ScratchWorkspace%\\ThresholdStep", "", Expression)
 
 #/linking of the streamnetwork
