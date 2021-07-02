@@ -31,13 +31,12 @@
 
 # Import of required librairies
 import arcpy
+import re
 import def__UpToDateShapeLengthField as UPD_SL
 import def__Export as Ext
 
 # Allow the temporary outputs overwrite
 arcpy.env.overwriteOutput = True
-
-
 
 #===============================================================================
 # CODING
@@ -59,6 +58,10 @@ def SLEM(Line, Distance, Output, TempFolder, TF):
             
     arcpy.AddMessage(k)
     
+    if re.search('french', arcpy.GetInstallInfo()['SourceDir'], re.IGNORECASE):
+        props = "Rank_UGO Ligne Distance To_M"
+    else:
+        props = "Rank_UGO LINE Distance To_M"
             
 
     ################################
@@ -101,7 +104,7 @@ def SLEM(Line, Distance, Output, TempFolder, TF):
         del rowsevents
 
         #/creation of the route event layer
-        MakeRouteEventTEMP = arcpy.MakeRouteEventLayer_lr(LineRoutes, "Rank_UGO", PointEventTEMP, "Rank_UGO LINE Distance To_M", "%ScratchWorkspace%\\MakeRouteEventTEMP")
+        MakeRouteEventTEMP = arcpy.MakeRouteEventLayer_lr(LineRoutes, "Rank_UGO", PointEventTEMP, props, "%ScratchWorkspace%\\MakeRouteEventTEMP")
         Split = arcpy.CopyFeatures_management(MakeRouteEventTEMP, "%ScratchWorkspace%\\Split", "", "0", "0", "0")
         Sort = arcpy.Sort_management(Split, Output, [["Rank_UGO", "ASCENDING"], ["Distance", "ASCENDING"]])
 
@@ -183,7 +186,7 @@ def SLEM(Line, Distance, Output, TempFolder, TF):
         del rowsevents
         
         #/creation of the route event layer
-        MakeRouteEventTEMP = arcpy.MakeRouteEventLayer_lr(LineRoutes, "Rank_UGO", PointEventTEMP, "Rank_UGO LINE Distance To_M", "%ScratchWorkspace%\\MakeRouteEventTEMP")
+        MakeRouteEventTEMP = arcpy.MakeRouteEventLayer_lr(LineRoutes, "Rank_UGO", PointEventTEMP, props, "%ScratchWorkspace%\\MakeRouteEventTEMP")
         Split = arcpy.CopyFeatures_management(MakeRouteEventTEMP, "%ScratchWorkspace%\\Split", "", "0", "0", "0")
         Sort = arcpy.Sort_management(Split, Output, [["Rank_UGO", "ASCENDING"], ["Distance", "ASCENDING"]])
 
@@ -278,7 +281,7 @@ def SLEM(Line, Distance, Output, TempFolder, TF):
         del rowsevents
         
         
-        MakeRouteEventTEMP = arcpy.MakeRouteEventLayer_lr(LineRoutes, "Rank_UGO", PointEventTEMP, "Rank_UGO LINE Distance To_M", "%ScratchWorkspace%\\MakeRouteEventTEMP")
+        MakeRouteEventTEMP = arcpy.MakeRouteEventLayer_lr(LineRoutes, "Rank_UGO", PointEventTEMP, props, "%ScratchWorkspace%\\MakeRouteEventTEMP")
         Split = arcpy.CopyFeatures_management(MakeRouteEventTEMP, "%ScratchWorkspace%\\Split", "", "0", "0", "0")
         Sort = arcpy.Sort_management(Split, Output, [["Rank_UGO", "ASCENDING"], ["Distance", "ASCENDING"]])
 
@@ -403,8 +406,12 @@ def SLEM(Line, Distance, Output, TempFolder, TF):
         del rowslines
         del rowsevents
         
-        
-        MakeRouteEventTEMP = arcpy.MakeRouteEventLayer_lr(LineRoutes, "Rank_AGO", PointEventTEMP, "Rank_AGO LINE Distance_From_Start To_M", "%ScratchWorkspace%\\MakeRouteEventTEMP")
+        if re.search('french', arcpy.GetInstallInfo()['SourceDir'], re.IGNORECASE):
+            props2 = "Rank_AGO Ligne Distance_From_Start To_M"
+        else:
+            props2 = "Rank_AGO LINE Distance_From_Start To_M"
+
+        MakeRouteEventTEMP = arcpy.MakeRouteEventLayer_lr(LineRoutes, "Rank_AGO", PointEventTEMP, props2, "%ScratchWorkspace%\\MakeRouteEventTEMP")
         Split = arcpy.CopyFeatures_management(MakeRouteEventTEMP, "%ScratchWorkspace%\\Split", "", "0", "0", "0")
         arcpy.AddField_management(Split, "Distance", "LONG", "", "", "", "", "NULLABLE", "NON_REQUIRED", "")
         arcpy.CalculateField_management(Split, "Distance", "!Distance_From_Start!", "PYTHON_9.3", "")
